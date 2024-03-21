@@ -2,16 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hearthstone Database</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json" />
+    <script>
+      navigator.serviceWorker.register("service-worker.js");
+    </script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-
-    
-
     <div class="overlay overlay-slide-left" id="overlay">
-      
       <h3 class="detail" detail-name></h3>
       <p class="detail" detail-set></p>
       <p class="detail" detail-rare></p>
@@ -20,23 +20,30 @@
       <p class="detail" detail-race></p>
       <p class="detail" detail-elite></p>
       <p class="detail" detail-collectible></p>
-
-
+      <img class="detail" src="" detail-image />
 
       <div id="hide-btn">
         <h2><- Back to Featured</h2>
       </div>
     </div>
-    
+
     <h1>Welcome to the Hearthstone Database</h1>
-    <a href="search.html"><button class="filter_button">Get Searching</button></a>
-
-    <h2>Today's featured cards</h2>
-    <div id="cards_featured_container">
-    <div class="featured_card"></div>
+    <div class="start_link">
+      <a href="search.html"
+        ><button class="start-button">Get Searching</button></a
+      >
     </div>
-    
-    <script src="detail_home.js"></script>
 
+    <h2>Try these cards out!</h2>
+    <div id="cards-featured-container"></div>
+
+    <template featured-card-template>
+      <div class="featured-card">
+        <img src="" />
+        <p style="text-align: center">Card Name</p>
+      </div>
+    </template>
+
+    <script src="detail_home.js"></script>
   </body>
 </html>
