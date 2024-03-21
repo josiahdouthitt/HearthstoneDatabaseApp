@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hearthstone Database</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="overlay overlay-slide-left" id="overlay">
+      <h3 class="detail" detail-name></h3>
+      <p class="detail" detail-set></p>
+      <p class="detail" detail-rare></p>
+      <p class="detail" detail-type></p>
+      <p class="detail" detail-faction></p>
+      <p class="detail" detail-race></p>
+      <p class="detail" detail-elite></p>
+      <p class="detail" detail-collectible></p>
+      <img class="detail" src="" detail-image />
+
+      <div id="hide-btn">
+        <h2><- Back to Search</h2>
+      </div>
+    </div>
+
+    <a href="index.html" id="home-link"><h3>Back to Home</h3></a>
+
+    <div class="searchbar">
+      <button search-button>GO</button>
+      <input type="text" placeholder="Search.." searchbar />
+    </div>
+
+    <hr />
+
+    <div id="Btn-Container">
+      <button class="filter_button" id="sort-rarity">Rarity</button>
+      <button class="filter_button" id="sort-class">Class</button>
+      <button class="filter_button" id="sort-set">Set</button>
+      <button class="filter_button" id="sort-faction">Faction</button>
+      <button class="filter_button" id="sort-type">Type</button>
+      <button class="filter_button" id="sort-race">Race</button>
+      <button class="filter_button active" id="sort-none">No Sort</button>
+    </div>
+
+    <template card-search-result>
+      <div class="search-result">
+        <h3 class="result-text" result-text>Result</h3>
+      </div>
+    </template>
+
+    <div id="results-container"></div>
+
+    <script src="search.js"></script>
+  </body>
+</html>
