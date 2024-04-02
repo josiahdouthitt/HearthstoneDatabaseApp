@@ -1,5 +1,5 @@
 const featuredTemplate = document.querySelector("[featured-card-template]");
-
+const spHeader = document.querySelector("[special-header]");
 const hideDetail = document.getElementById("hide-btn");
 const overlay = document.getElementById("overlay");
 const title = overlay.querySelector("[detail-name]");
@@ -84,7 +84,9 @@ function GetRandomCards() {
     .then((data) => {
       const useData = data.slice(0, 50);
 
-      for (let i = 0; i < 4; i++) {
+      spHeader.textContent = "Try these cards out!";
+
+      for (let i = 0; i < 12; i++) {
         cardData = useData[Math.floor(Math.random() * useData.length)];
 
         const result = featuredTemplate.content.cloneNode(true).children[0];

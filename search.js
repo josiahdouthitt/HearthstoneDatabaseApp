@@ -1,4 +1,5 @@
 const resultTemplate = document.querySelector("[card-search-result]");
+const waitText = document.querySelector("[wait-text]");
 const resultsContainer = document.getElementById("results-container");
 
 const searchBar = document.querySelector("[searchbar]");
@@ -40,6 +41,8 @@ function SearchCards(inputValue) {
     },
   };
 
+  waitText.innerHTML = "Searching the database for you...";
+
   fetch(url, options)
     .then((res) => {
       return res.json();
@@ -48,7 +51,10 @@ function SearchCards(inputValue) {
       cardData = data.slice(0, 50);
       displayData(cardData);
     })
-    .catch((error) => console.log("ERROR"));
+    .catch((error) => {
+      waitText.innerHTML = "No cards to be found. Try Searching again.";
+      console.log("ERROR");
+    });
 }
 
 function openDetail(cardID) {
@@ -99,6 +105,8 @@ function closeDetail() {
 }
 
 function displayData(data) {
+  waitText.innerHTML = "";
+
   data.forEach((element) => {
     const result = resultTemplate.content.cloneNode(true).children[0];
     const resultText = result.querySelector("[result-text]");

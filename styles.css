@@ -125,6 +125,9 @@ html {
     text-align: center;
 }
 
+#results-container {
+    margin-bottom: 10%;
+}
 
 
 .overlay {
